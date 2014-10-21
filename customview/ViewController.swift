@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         var progressView = ProgressView(frame: CGRect(x:10, y:100, width:300, height:1))
+        progressView.backgroundColor = UIColor.clearColor()
         self.view.addSubview(progressView)
     }
 
