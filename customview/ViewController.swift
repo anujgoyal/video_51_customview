@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        var progressView = ProgressView(frame: CGRect(x:10, y:100, width:300, height:1))
+        self.view.addSubview(progressView)
     }
 
     override func didReceiveMemoryWarning() {
