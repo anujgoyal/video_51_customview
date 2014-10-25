@@ -10,6 +10,13 @@ import UIKit
 
 class ProgressView: UIView {
 
+    var progress: Float = 0 {
+        didSet {
+           self.setNeedsDisplay()
+        }
+    }
+    
+    
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
@@ -21,7 +28,7 @@ class ProgressView: UIView {
         // start drawing, like etch-a-sketch
         CGContextBeginPath(context)
         CGContextMoveToPoint(context, 0, 0)
-        CGContextAddLineToPoint(context, rect.size.width, 0)
+        CGContextAddLineToPoint(context, rect.size.width * CGFloat(progress), 0)
         CGContextStrokePath(context)
     }
 
