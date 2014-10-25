@@ -14,19 +14,26 @@ class UserProfileView: UIView {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet var contentView: UIView!
     
+    
+    // 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setup()
+    }
+    
+    // read swift book, section on initializers
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    func setup() {
         var nib = UINib(nibName: "UserProfileView", bundle: nil)
         nib.instantiateWithOwner(self, options: nil)
         
         //contentView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
         contentView.frame = bounds  // same as the above line, 1:02:00
         self.addSubview(contentView)
-    }
-    
-    // read swift book, section on initializers
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
     }
     
     /*
